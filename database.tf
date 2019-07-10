@@ -13,6 +13,13 @@ resource "oci_database_db_system" "sei_dbs1" {
       admin_password = "AAbbCCdd_#123"
       db_name        = "db1"
       pdb_name       = "pdb1"
+
+      db_backup_config {
+
+        #Optional
+        auto_backup_enabled     = "true"
+        recovery_window_in_days = "7"
+      }
     }
     display_name = "db1"
     db_version   = "${var.db_version}"
