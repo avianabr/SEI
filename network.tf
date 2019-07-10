@@ -314,12 +314,13 @@ resource "oci_core_subnet" "public" {
 }
 
 resource "oci_core_subnet" "private" {
-  display_name      = "private"
-  cidr_block        = "${var.private_subnet_cidr}"
-  dns_label         = "private"
-  security_list_ids = ["${oci_core_security_list.private.id}"]
-  compartment_id    = "${var.compartment_ocid}"
-  vcn_id            = "${oci_core_virtual_network.vcn1.id}"
-  route_table_id    = "${oci_core_route_table.private.id}"
-  dhcp_options_id   = "${oci_core_virtual_network.vcn1.default_dhcp_options_id}"
+  display_name               = "private"
+  cidr_block                 = "${var.private_subnet_cidr}"
+  dns_label                  = "private"
+  security_list_ids          = ["${oci_core_security_list.private.id}"]
+  compartment_id             = "${var.compartment_ocid}"
+  vcn_id                     = "${oci_core_virtual_network.vcn1.id}"
+  route_table_id             = "${oci_core_route_table.private.id}"
+  dhcp_options_id            = "${oci_core_virtual_network.vcn1.default_dhcp_options_id}"
+  prohibit_public_ip_on_vnic = "true"
 }

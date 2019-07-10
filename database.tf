@@ -1,7 +1,7 @@
 
 
 
-resource "oci_database_db_system" "db1" {
+resource "oci_database_db_system" "sei_dbs1" {
   #Required
   availability_domain = "${lookup(data.oci_identity_availability_domains.availability_domains.availability_domains[var.availability_domains - 3], "name")}"
   compartment_id      = "${var.compartment_ocid}"
@@ -23,6 +23,6 @@ resource "oci_database_db_system" "db1" {
   subnet_id               = "${oci_core_subnet.private.id}"
   node_count              = "1"
   data_storage_size_in_gb = "1024"
-  display_name            = "sei"
+  display_name            = "sei_dbs1"
 
 }
