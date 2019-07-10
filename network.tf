@@ -16,10 +16,10 @@ locals {
 ############################################
 
 resource "oci_core_virtual_network" "vcn1" {
-  display_name   = "vnc1"
+  display_name   = "vcn1"
   cidr_block     = "${var.vcn_cidr}"
   compartment_id = "${var.compartment_ocid}"
-  dns_label      = "vnc1"
+  dns_label      = "vcn1"
 }
 
 ############################################
