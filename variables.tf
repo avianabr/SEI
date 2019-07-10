@@ -43,7 +43,7 @@ variable instance_shape {
 }
 
 variable "db_version" {
-  default = "12.1.0.2"
+  default = "12.1.0.2.190416"
 }
 
 data "oci_identity_availability_domains" "availability_domains" {
